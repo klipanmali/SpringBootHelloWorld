@@ -1,0 +1,45 @@
+>>>>>
+Starter POMs
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter
+
+- empty jar, it purpose is to provide neccessary dependances so you don't need to worry what are all neccessary dempendances snd spares you
+  a lot of copy/paste 
+- Starters are a set of convenient dependency descriptors that you can include in your application. You get a one-stop shop for all
+  the Spring and related technologies that you need without having to hunt through sample code and copy-paste loads of dependency
+  descriptors. For example, if you want to get started using Spring and JPA for database access, include the spring-boot-starter-data-jpa
+  dependency in your project.
+<<<<<
+
+>>>>>
+<parent>
+
+- enables to inherit defaults from Spring Boot
+
+Maven users can inherit from the spring-boot-starter-parent project to obtain sensible defaults.
+The parent project provides the following features:
+    Java 1.8 as the default compiler level.
+    UTF-8 source encoding.
+    A Dependency Management section, inherited from the spring-boot-dependencies pom, that manages the versions of common dependencies.
+	    This dependency management lets you omit <version> tags for those dependencies when used in your own pom.
+    An execution of the repackage goal with a repackage execution id.
+    Sensible resource filtering.
+    Sensible plugin configuration (exec plugin, Git commit ID, and shade).
+    Sensible resource filtering for application.properties and application.yml including profile-specific files (for example,
+	    application-dev.properties and application-dev.yml)
+
+Note that, since the application.properties and application.yml files accept Spring style placeholders (${…​}), the Maven filtering is
+changed to use @..@ placeholders. (You can override that by setting a Maven property called resource.delimiter.)
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.7.RELEASE</version>
+	</parent>
+
+With that setup, you can also override individual dependencies by overriding a property in your own project. For instance, to upgrade to
+another Spring Data release train, you would add the following to your pom.xml:
+
+	<properties>
+		<spring-data-releasetrain.version>Fowler-SR2</spring-data-releasetrain.version>
+	</properties>
+<<<<<

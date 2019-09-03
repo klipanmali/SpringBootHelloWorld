@@ -44,6 +44,19 @@ another Spring Data release train, you would add the following to your pom.xml:
 	</properties>
 <<<<<
 
+>>>>>
+actuators
+
+Spring Boot provides several out of the box management services with its actuator module, such as health, audits, beans, and more.
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        
+        curl localhost:8080/actuator/health
+
+<<<<<
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

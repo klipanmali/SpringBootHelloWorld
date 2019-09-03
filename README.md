@@ -24,7 +24,7 @@ The Spring Boot Maven plugin provides many convenient features:
   - It provides a built-in dependency resolver that sets the version number to match Spring Boot dependencies. You can override 
     any version you wish, but it will default to Boot’s chosen set of versions.
 
-
+Actuators: out of the box management services: actuator/health, actuator/shutdown
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -24,6 +25,9 @@ public class HelloControlerIT {
 
 	private URL base;
 
+	@Value("${spring.application.name:demoservice}")
+	private String appName;
+
 	@Autowired
 	private TestRestTemplate template;
 
@@ -34,8 +38,10 @@ public class HelloControlerIT {
 
 	@Test
 	public void getHello() throws Exception {
+		String greeting = "Greetings from " + appName + " Spring Boot!";
+
 		ResponseEntity<String> response = template.getForEntity(base.toString(),
 				String.class);
-		assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
+		assertThat(response.getBody(), equalTo(greeting));
 	}
 }

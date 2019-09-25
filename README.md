@@ -63,4 +63,7 @@ Spring annotations:
   - @SpringBootTest - whole application context to be created. An alternative would be to ask Spring Boot to create only the web layers
     of the context using the @WebMvcTest
   - @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) - start up embedded server on random port
+  - @Value("${property_key_name}" - read the environment or application property value in Java code. If the property is not found while 
+    running the application, Spring Boot throws the Illegal Argument exception
+  - @Value("${property_key_name:default_value}" - if property is not found, use default value
   - @WebMvcTest - create only the web layers of the context

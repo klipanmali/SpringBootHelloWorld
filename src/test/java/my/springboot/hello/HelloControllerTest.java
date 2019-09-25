@@ -7,6 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -22,12 +23,15 @@ public class HelloControllerTest {
 	@Autowired
 	private MockMvc mvc;
 
+	@Value("${spring.application.name:demoservice}")
+	private String appName;
+
 	@Test
 	public void getHello() throws Exception {
+		String greeting = "Greetings from " + appName + " Spring Boot!";
 		mvc.perform(MockMvcRequestBuilders.get("/")
 				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
-				.andExpect(content()
-						.string(equalTo("Greetings from Spring Boot!")));
+				.andExpect(content().string(equalTo(greeting)));
 
 	}
 }

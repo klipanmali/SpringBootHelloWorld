@@ -87,6 +87,20 @@ over the other property sources.
 server.port = 9090 - change port number
 spring.application.name = demoservice - change app name
 
+Application properties - External properties
+Instead of keeping the properties file under classpath, we can keep the properties in different location or path.
+You read them with help of -Dspring.config.location = C:\application.properties
+
+java -jar "jar file".jar -Dspring.config.location = C:\application.properties
+
+Application properties - Active profile
+Spring Boot supports different properties based on the Spring active profile.
+Properties are kept in different files
+	application.properties
+	application-dev.properties
+	application-prod.properties
+While running the JAR file, we need to specify the spring active profile based on each properties file.
+java -jar "jar file".jar -spring.properites.active="dev or prod"
 <<<<<
 
 Spring annotations:

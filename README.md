@@ -44,13 +44,17 @@ Spring annotations:
   - @EnableAutoConfiguration - Spring Boot automatically configures your application based on the dependences you have added
   - @Inject - for injecting, but @Autowired is little bit more powerful
   - @LocalServerPort - add local server port discovered at runtime
+  - @PathVariable - define the custom or dynamic request URI. The Path variable in request URI is defined as curly braces {}
   - @Primary - in case of multiple beans, bean annotated with @Primary is injected
   - @Profile("profileName") - for which profile to start this bean
   - @Qualifier(qualifierName) - qualifies what bean to inject
-  - @RequestMapping - request url mapping handled by controller
+  - @RequestBody - define the request body content type.
+  - @RequestMapping - request url mapping handled by controller. Used to define the Request URI to access the REST Endpoints.
+  - @RequestParam - read the request parameters from the Request URL. By default, it is a required parameter. We can also set default value
+    for request parameters
   - @Resource -for injecting, but @Autowired is little bit more powerful
   - @RestController - controller, controls the ULRs, combines @Controller and @ResponseBody, two annotations that results in
-    web requests returning data rather than view(MVC)
+    web requests returning data rather than view(MVC). Used to define the RESTful web services. It serves JSON, XML and custom response.
   - @SpringBootApplication - the entry point for the spring boot application, package containing @SpringBootApplication class and all
     sub packages are scanned for classes to add in "Application context", combines:
     - @Configuration - tags the class as a source of bean definitions for the application context

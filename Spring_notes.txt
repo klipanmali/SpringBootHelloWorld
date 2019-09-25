@@ -1,4 +1,4 @@
->>>>>
+﻿>>>>>
 Starter POMs
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-starter
 
@@ -136,6 +136,24 @@ are configured in logback.xml file. The logback.xml file should be placed under 
 You can configure the console appender or/and file appender in Logback.xml file. You can define the Log pattern as well
 <<<<<
 
+>>>>>
+Restfull web service
+
+@RestController - start point, maps JSON, XLM responses
+@RequestMapping(value = "/products")
+public ResponseEntity<Object> createProduct(@RequestBody Product product){...}
+public ResponseEntity<Object> updateProduct(@PathVariable("id") String id){...}
+public ResponseEntity<Object> getProduct(@RequestParam(value = "name", required = false, defaultValue = "honey") String name) {...}
+
+The default HTTP request method is GET. This method does not require any Request Body. You can send request parameters and path variables
+to define the custom or dynamic URL.
+The HTTP POST request is used to create a resource. This method contains the Request Body. We can send request parameters and path variables
+to define the custom or dynamic URL.
+The HTTP PUT request is used to update the existing resource. This method contains a Request Body. We can send request parameters and
+path variables to define the custom or dynamic URL.
+The HTTP Delete request is used to delete the existing resource. This method does not contain any Request Body. We can send request
+parameters and path variables to define the custom or dynamic URL.
+<<<<<
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
@@ -145,3 +163,7 @@ Spring annotations:
     of the context using the @WebMvcTest
   - @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) - start up embedded server on random port
   - @WebMvcTest - create only the web layers of the context
+
+
+ curl -X PUT -d '<?xml version="1.0" encoding="UTF-8"?><project><name>G1</name></project>' --header 'Content-Type:application/xml' \
+     https://lmr-g1-ci-infobank.rnd.ki.sw.ericsson.se/infobank/rest/project

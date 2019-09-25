@@ -2,13 +2,15 @@ package my.springboot.hello;
 
 import java.util.Arrays;
 
+import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class HelloApplication implements CommandLineRunner {
+public class HelloApplication implements ApplicationRunner {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelloApplication.class, args);
@@ -31,10 +33,8 @@ public class HelloApplication implements CommandLineRunner {
 	}
 
 	@Override
-	public void run(String... args) throws Exception {
-		System.out.println("Hello world from Command line runner");
-		System.err.println("input arguments " + args.length + " : "
-				+ Arrays.toString(args));
+	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("Hello World from Application Runner");
 	}
 
 }

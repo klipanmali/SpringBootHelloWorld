@@ -1,10 +1,18 @@
 buildscript {
+	
+	ext {
+		springBootVersion = "2.1.6.RELEASE"
+	}
     repositories {
         mavenCentral()
     }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
-    }
+	
+	dependencies {
+	    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+//    dependencies {
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+//    }
 }
 
 apply plugin: 'java'
@@ -12,10 +20,15 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+// need this for servlet initializer
+apply plugin: 'war'
+apply plugin: 'application'
 
 group = "my.springboot.hello"
 archivesBaseName = 'helloworld-spring-boot-gradle'
 version = "0.0.1"
+// need this for servlet initializer
+mainClassName = "my.springboot.hello.HelloApplication"
 
 //bootJar {
 //    baseName = 'helloworld-spring-boot-gradle'

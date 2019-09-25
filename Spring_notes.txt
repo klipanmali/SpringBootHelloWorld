@@ -61,7 +61,21 @@ Spring Boot provides several out of the box management services with its actuato
 >>>>>
 Command line runner and Application runner
 
-Command line runner and Application runner are both an interface.they are used to execute code after the Spring Boot application started
+Command line runner and Application runner are both an interface. They are used to execute code after the Spring Boot application started.
+These interface holds run(), which will be call just after SpringBeans and ApplicationContext are created.
+
+When you want to execute some piece of code exactly before the application startup completes, you can use it then. In one of our projects,
+we used these to source data from other microservices via service discovery, which was registered in Consul.
+
+You can register as many application/command line runners as you want. You just need to register them as Beans in the application context.
+Then, Spring will automatically pick them up.
+
+You can order them as well either by extending interface org.springframework.core.Ordered or via the @Order annotation.
+
+ApplicationRunner wraps the raw application arguments and exposes the ApplicationArguments interface,
+which has many convenient methods to get arguments, like getOptionNames() to return all the arguments' names,
+getOptionValues() to return the argument value, and raw source arguments with method getSourceArgs().
+
 <<<<<
 
 Spring annotations:

@@ -8,15 +8,16 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class HelloApplication implements ApplicationRunner {
+public class HelloApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelloApplication.class, args);
 	}
 
-	// @Bean
+	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 
@@ -32,9 +33,10 @@ public class HelloApplication implements ApplicationRunner {
 		};
 	}
 
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("Hello World from Application Runner");
+	@Bean
+	public ApplicationRunner applicationRunner(ApplicationArguments args) {
+		return someArgs -> System.out
+				.println("Hello World from Application Runner");
 	}
 
 }

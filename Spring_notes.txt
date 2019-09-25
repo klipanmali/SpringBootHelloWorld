@@ -101,6 +101,12 @@ Properties are kept in different files
 	application-prod.properties
 While running the JAR file, we need to specify the spring active profile based on each properties file.
 java -jar "jar file".jar -spring.properites.active="dev or prod"
+
+Spring Boot supports YAML based properties configurations to run the application. Instead of application.properties,
+we can use application.yml file. This YAML file also should be kept inside the classpath.
+We can keep the Spring active profile properties in the single application.yml file.
+No need to use the separate file like application.properties.
+
 <<<<<
 
 Spring annotations:

@@ -3,6 +3,8 @@ spring:
       name: demoservice
 server:
    port: 8080
+#    port: 0 server uses random port number
+
 
 ---
 spring:

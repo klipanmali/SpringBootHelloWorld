@@ -106,6 +106,8 @@ we can use application.yml file. This YAML file also should be kept inside the c
 We can keep the Spring active profile properties in the single application.yml file.
 No need to use the separate file like application.properties.
 
+If the server.port number is 0 while starting the Spring Boot application, Tomcat uses the random port number.
+
 <<<<<
 
 >>>>>

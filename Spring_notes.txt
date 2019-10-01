@@ -155,6 +155,14 @@ The HTTP Delete request is used to delete the existing resource. This method doe
 parameters and path variables to define the custom or dynamic URL.
 <<<<<
 
+>>>>>
+Exception handling
+
+@ControlerAdvice annotated class is a central place to define exception handling, and @ExceptionHandler annotated method in this calss
+handles the specific exception and sending the custom responses to the client
+<<<<<
+
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

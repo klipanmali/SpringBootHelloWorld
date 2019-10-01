@@ -41,7 +41,10 @@ Spring annotations:
   - @ConditionalOnProperty
   - @ConditionalOnMissingBean
   - @Configuration - class annotated with this annotation is used to create beans from some third party classes
+  - @ControlerAdvice - handles exceptions globally, annotated class is central place to implement exception handling for 
+    every single exception(@ExceptionHandler)
   - @EnableAutoConfiguration - Spring Boot automatically configures your application based on the dependences you have added
+  - @ExceptionHandler - handle the specific exception and sending the custom responses to the client
   - @Inject - for injecting, but @Autowired is little bit more powerful
   - @LocalServerPort - add local server port discovered at runtime
   - @PathVariable - define the custom or dynamic request URI. The Path variable in request URI is defined as curly braces {}

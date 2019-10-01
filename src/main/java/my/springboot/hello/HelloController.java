@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import my.springboot.hello.exceptionhandling.ProductNotFoundException;
 import my.springboot.hello.model.Product;
 
 @RestController
@@ -67,6 +68,8 @@ public class HelloController {
 	// DELETE
 	@RequestMapping(value = "products/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> deleteProduct(@PathVariable("id") String id) {
+		if (!productRepo.containsKey(id))
+			throw new ProductNotFoundException();
 		productRepo.remove(id);
 		return new ResponseEntity<>("Product Deleted", HttpStatus.OK);
 	}

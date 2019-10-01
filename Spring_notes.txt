@@ -176,7 +176,18 @@ To work with interceptor, you need to create @Component class that supports it a
 	- postHandle() -  perform operations before sending the response to the client.
 	- afterCompletion() - perform operations after completing the request and response.
 
-You will have to register this Interceptor with InterceptorRegistry by using WebMvcConfigurerAdapter
+You will have to register this Interceptor with InterceptorRegistry by using @Component WebMvcConfigurerAdapter
+<<<<<
+
+>>>>>
+Servlet filters
+
+A filter is an object used to intercept the HTTP requests and responses of your application. By using filter,
+we can perform two operations at two instances:
+    - Before sending the request to the controller
+    - Before sending a response to the client
+
+To implement Filter you need @Component that implements Filter interface.
 <<<<<
 
 Spring annotations:

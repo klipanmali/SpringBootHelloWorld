@@ -162,6 +162,22 @@ Exception handling
 handles the specific exception and sending the custom responses to the client
 <<<<<
 
+>>>>>
+Interceptors
+
+You can use the Interceptor in Spring Boot to perform operations under the following situations:
+    - Before sending the request to the controller
+    - Before sending the response to the client
+For example, you can use an interceptor to add the request header before sending the request to the controller and add the response header
+before sending the response to the client.
+
+To work with interceptor, you need to create @Component class that supports it and it should implement the HandlerInterceptor interface.
+	- preHandle() - perform operations before sending the request to the controller.
+	- postHandle() -  perform operations before sending the response to the client.
+	- afterCompletion() - perform operations after completing the request and response.
+
+You will have to register this Interceptor with InterceptorRegistry by using WebMvcConfigurerAdapter
+<<<<<
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

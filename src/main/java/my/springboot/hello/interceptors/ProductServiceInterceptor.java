@@ -9,13 +9,11 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import my.springboot.hello.ApplicationStartupRunner;
-
 @Component
 public class ProductServiceInterceptor implements HandlerInterceptor {
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(ApplicationStartupRunner.class);
+			.getLogger(ProductServiceInterceptor.class);
 
 	@Override
 	public void afterCompletion(HttpServletRequest request,

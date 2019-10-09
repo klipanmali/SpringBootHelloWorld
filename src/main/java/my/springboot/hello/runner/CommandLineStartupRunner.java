@@ -1,4 +1,4 @@
-package my.springboot.hello;
+package my.springboot.hello.runner;
 
 import java.util.Arrays;
 

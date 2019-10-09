@@ -1,4 +1,4 @@
-package my.springboot.hello;
+package my.springboot.hello.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,6 +18,7 @@ import my.springboot.hello.exceptionhandling.ProductNotFoundException;
 import my.springboot.hello.model.Product;
 
 @RestController
+@RequestMapping("/hello")
 public class HelloController {
 
 	private static final Logger logger = LoggerFactory
@@ -36,7 +37,8 @@ public class HelloController {
 	@Value("${spring.application.name:demoservice}")
 	private String appName;
 
-	@RequestMapping("/")
+	@RequestMapping(value = {"", "/"}) // valid requests are :8080/hello
+										// :8080/hello/
 	public String index() {
 		logger.debug("You have hit 'Greetings' page");
 		return "Greetings from " + appName + " Spring Boot!";

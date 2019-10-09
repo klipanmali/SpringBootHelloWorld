@@ -192,6 +192,19 @@ we can perform two operations at two instances:
 To implement Filter you need @Component that implements Filter interface.
 <<<<<
 
+>>>>>
+File handling, upload/download
+
+For uploading a file, you can use MultipartFile as a Request Parameter and this API should consume Multi-Part form data value
+
+For file download, you should use InputStreamResource for downloading a File. We need to set the HttpHeader Content-Disposition
+in Response and need to specify the response Media Type of the application.
+>>>>>
+Service Components are the class file which contains @Service annotation. These class files are used to write business logic in a different
+layer, separated from @RestController class file.
+
+<<<<<
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

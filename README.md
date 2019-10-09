@@ -28,6 +28,23 @@ Actuators: out of the box management services: actuator/health, actuator/shutdow
 
 Command line runner and Application runner
 
+Application properties
+
+Logging
+
+Exception handling
+
+Interceptors
+
+Servlet filters
+
+Tomcat Port Number
+
+file upload/download
+
+Services components
+
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result
@@ -58,6 +75,7 @@ Spring annotations:
   - @Resource -for injecting, but @Autowired is little bit more powerful
   - @RestController - controller, controls the ULRs, combines @Controller and @ResponseBody, two annotations that results in
     web requests returning data rather than view(MVC). Used to define the RESTful web services. It serves JSON, XML and custom response.
+  - @Service - Service Components, used to contain business logic
   - @SpringBootApplication - the entry point for the spring boot application, package containing @SpringBootApplication class and all
     sub packages are scanned for classes to add in "Application context", combines:
     - @Configuration - tags the class as a source of bean definitions for the application context

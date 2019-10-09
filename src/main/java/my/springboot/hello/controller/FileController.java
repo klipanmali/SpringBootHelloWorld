@@ -19,10 +19,19 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping(value = "/file")
 public class FileController {
 
+	private static final String UPLOAD_FOLDER = "/var/tmp/";
+
 	@RequestMapping(value = "/upload", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
 	public String fileUpload(@RequestParam("file") MultipartFile file)
 			throws IOException {
-		File convertFile = new File("/var/tmp/" + file.getOriginalFilename());
+
+		try {
+			createFolderIfNotExists(UPLOAD_FOLDER);
+		} catch (SecurityException e) {
+			return "Can not create destination folder";
+		}
+
+		File convertFile = new File(UPLOAD_FOLDER + file.getOriginalFilename());
 		convertFile.createNewFile();
 		FileOutputStream fout = new FileOutputStream(convertFile);
 		fout.write(file.getBytes());
@@ -48,5 +57,13 @@ public class FileController {
 				.contentType(MediaType.parseMediaType("aplication/txt"))
 				.body(resource);
 		return responseEntity;
+	}
+
+	private void createFolderIfNotExists(String dirName)
+			throws SecurityException {
+		File theDir = new File(dirName);
+		if (!theDir.exists()) {
+			theDir.mkdir();
+		}
 	}
 }

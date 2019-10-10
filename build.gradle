@@ -1,9 +1,12 @@
 buildscript {
+    ext {
+        springBootVersion = "2.1.6.RELEASE"
+    }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
 
@@ -31,7 +34,18 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
 	compile("org.springframework.boot:spring-boot-starter-actuator")
     //testCompile("junit:junit")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
+	//java client
+	// version includded
+	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
+	//version excluded
+	compile group: 'org.apache.httpcomponents', name: 'httpmime'
+	//one more sintax
+	compile ("org.apache.httpcomponents:httpcore")
+	//version included
+    //compile ("org.apache.httpcomponents:httpcore:4.4.12")
+	
 }

@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -20,10 +22,11 @@ import org.springframework.web.multipart.MultipartFile;
 public class FileController {
 
 	private static final String UPLOAD_FOLDER = "/var/tmp/";
+	private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST, consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-	public String fileUpload(@RequestParam("file") MultipartFile file)
-			throws IOException {
+	public String fileUpload(@RequestParam("file") MultipartFile file) throws IOException {
+		logger.info("Uploading file");
 
 		try {
 			createFolderIfNotExists(UPLOAD_FOLDER);
@@ -41,26 +44,23 @@ public class FileController {
 
 	@RequestMapping(value = "/download", method = RequestMethod.GET)
 	public ResponseEntity<Object> downloadFile() throws IOException {
+		logger.info("Downloading file");
+
 		String fileName = "/var/tmp/mylog.log";
 		File file = new File(fileName);
-		InputStreamResource resource = new InputStreamResource(
-				new FileInputStream(file));
+		InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 		HttpHeaders headers = new HttpHeaders();
-		headers.add("Content-Disposition",
-				String.format("attachment; filename=\"%s\"", file.getName()));
+		headers.add("Content-Disposition", String.format("attachment; filename=\"%s\"", file.getName()));
 		headers.add("Cache-Control", "no-cache, no-store, must-revalidate");
 		headers.add("Pragma", "no-cache");
 		headers.add("Expires", "0");
 
-		ResponseEntity<Object> responseEntity = ResponseEntity.ok()
-				.headers(headers).contentLength(file.length())
-				.contentType(MediaType.parseMediaType("aplication/txt"))
-				.body(resource);
+		ResponseEntity<Object> responseEntity = ResponseEntity.ok().headers(headers).contentLength(file.length())
+				.contentType(MediaType.parseMediaType("aplication/txt")).body(resource);
 		return responseEntity;
 	}
 
-	private void createFolderIfNotExists(String dirName)
-			throws SecurityException {
+	private void createFolderIfNotExists(String dirName) throws SecurityException {
 		File theDir = new File(dirName);
 		if (!theDir.exists()) {
 			theDir.mkdir();

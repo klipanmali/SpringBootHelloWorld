@@ -33,15 +33,14 @@ public class HelloControlerIT {
 
 	@Before
 	public void setUp() throws Exception {
-		this.base = new URL("http://localhost:" + port + "/");
+		this.base = new URL("http://localhost:" + port + "/hello");
 	}
 
 	@Test
 	public void getHello() throws Exception {
 		String greeting = "Greetings from " + appName + " Spring Boot!";
 
-		ResponseEntity<String> response = template.getForEntity(base.toString(),
-				String.class);
+		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
 		assertThat(response.getBody(), equalTo(greeting));
 	}
 }

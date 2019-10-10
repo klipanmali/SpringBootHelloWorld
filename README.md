@@ -44,6 +44,7 @@ file upload/download
 
 Services components
 
+Thymeleaf - Java-based library used to create a web application.
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

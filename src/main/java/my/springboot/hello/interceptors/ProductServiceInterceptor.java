@@ -12,33 +12,26 @@ import org.springframework.web.servlet.ModelAndView;
 @Component
 public class ProductServiceInterceptor implements HandlerInterceptor {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(ProductServiceInterceptor.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProductServiceInterceptor.class);
 
 	@Override
-	public void afterCompletion(HttpServletRequest request,
-			HttpServletResponse response, Object handler, Exception ex)
+	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		logger.info("Interceptor done afthe completion");
-		HandlerInterceptor.super.afterCompletion(request, response, handler,
-				ex);
+		logger.info("Interceptor done afther completion");
+		HandlerInterceptor.super.afterCompletion(request, response, handler, ex);
 	}
 
 	@Override
-	public void postHandle(HttpServletRequest request,
-			HttpServletResponse response, Object handler,
+	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		logger.info(
-				"Interceptor done some things before sending request to the Contrlorer");
-		HandlerInterceptor.super.postHandle(request, response, handler,
-				modelAndView);
+		logger.info("Interceptor done some things before sending response to the client");
+		HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);
 	}
 
 	@Override
-	public boolean preHandle(HttpServletRequest request,
-			HttpServletResponse response, Object handler) throws Exception {
-		logger.info(
-				"Interceptor done some things before sending response to the client");
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		logger.info("Interceptor done some things before sending request to the Controlrer");
 		return HandlerInterceptor.super.preHandle(request, response, handler);
 	}
 

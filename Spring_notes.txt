@@ -199,10 +199,29 @@ For uploading a file, you can use MultipartFile as a Request Parameter and this 
 
 For file download, you should use InputStreamResource for downloading a File. We need to set the HttpHeader Content-Disposition
 in Response and need to specify the response Media Type of the application.
+<<<<<
+
 >>>>>
+Service components
+
 Service Components are the class file which contains @Service annotation. These class files are used to write business logic in a different
 layer, separated from @RestController class file.
+<<<<<
 
+>>>>>
+Thmeleaf
+
+Thymeleaf is a Java-based library used to create a web application. It provides a good support for serving a XHTML/HTML5 in web applications.
+Thymeleaf converts your files into well-formed XML files. It contains 6 types of templates as given below −
+    XML
+    Valid XML
+    XHTML
+    Valid XHTML
+    HTML5
+    Legacy HTML5
+Use the @Controller class to redirect the Request URI to HTML file
+The request URI is /index, and the control is redirected into the index.html file. Note that the index.html file should be placed under
+the templates directory and all JS and CSS files should be placed under the static directory in classpath.
 <<<<<
 
 Spring annotations:

@@ -14,8 +14,7 @@ import my.springboot.hello.model.Product;
 @Service
 public class ProdcutServiceImpl implements ProductService {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(ProdcutServiceImpl.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProdcutServiceImpl.class);
 
 	private static Map<String, Product> productRepo = new HashMap<>();
 
@@ -28,6 +27,7 @@ public class ProdcutServiceImpl implements ProductService {
 
 	@Override
 	public Collection<Product> getProducts() {
+		logger.info("Fetching products");
 		return productRepo.values();
 	}
 

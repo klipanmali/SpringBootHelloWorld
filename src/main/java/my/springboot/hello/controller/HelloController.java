@@ -19,8 +19,7 @@ import my.springboot.hello.service.ProductService;
 @RequestMapping("/hello")
 public class HelloController {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(HelloController.class);
+	private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
 	@Autowired
 	ProductService productService;
@@ -30,8 +29,8 @@ public class HelloController {
 	@Value("${spring.application.name:demoservice}")
 	private String appName;
 
-	@RequestMapping(value = {"", "/"}) // valid requests are :8080/hello
-										// :8080/hello/
+	@RequestMapping(value = { "", "/" }) // valid requests are :8080/hello
+											// :8080/hello/
 	public String index() {
 		logger.debug("You have hit 'Greetings' page");
 		return "Greetings from " + appName + " Spring Boot!";
@@ -40,28 +39,28 @@ public class HelloController {
 	// GET
 	@RequestMapping(value = "/products")
 	public ResponseEntity<Object> getProduct() {
-		return new ResponseEntity<>(productService.getProducts(),
-				HttpStatus.OK);
+		logger.info("GET: getting products");
+		return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);
 	}
 
 	// POST
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public ResponseEntity<Object> createProduct(@RequestBody Product product) {
-		return new ResponseEntity<>(productService.createProduct(product),
-				HttpStatus.CREATED);
+		logger.info("POST: creating product");
+		return new ResponseEntity<>(productService.createProduct(product), HttpStatus.CREATED);
 	}
 
 	// PUT
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id,
-			@RequestBody Product product) {
-		return new ResponseEntity<>(productService.updateProduct(id, product),
-				HttpStatus.OK);
+	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
+		logger.info("PUT: updating product");
+		return new ResponseEntity<>(productService.updateProduct(id, product), HttpStatus.OK);
 	}
 
 	// DELETE
 	@RequestMapping(value = "products/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> deleteProduct(@PathVariable("id") String id) {
+		logger.info("DELETE: deleting product");
 		productService.deleteProduct(id);
 		return new ResponseEntity<>("Product Deleted", HttpStatus.OK);
 	}

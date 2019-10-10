@@ -32,8 +32,10 @@ public class RemoteInfoFilter implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain filterChain) throws IOException, ServletException {
-		logger.info("Remote Host: " + request.getRemoteHost());
-		logger.info("Remote Adress: " + request.getRemoteAddr());
+		logger.info(
+				"Filtering Request: Remote Host: " + request.getRemoteHost());
+		logger.info(
+				"Filtering Request: Remote Adress: " + request.getRemoteAddr());
 		filterChain.doFilter(request, response);
 	}
 

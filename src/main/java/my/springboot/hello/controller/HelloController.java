@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,9 +18,12 @@ import my.springboot.hello.service.ProductService;
 
 @RestController
 @RequestMapping("/hello")
+// If RESTFull app is on 8080 and Web app on 9090
+// @CrossOrigin(origins = "http://localhost:9090")
 public class HelloController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
+	private static final Logger logger = LoggerFactory
+			.getLogger(HelloController.class);
 
 	@Autowired
 	ProductService productService;
@@ -29,8 +33,8 @@ public class HelloController {
 	@Value("${spring.application.name:demoservice}")
 	private String appName;
 
-	@RequestMapping(value = { "", "/" }) // valid requests are :8080/hello
-											// :8080/hello/
+	@RequestMapping(value = {"", "/"}) // valid requests are :8080/hello
+										// :8080/hello/
 	public String index() {
 		logger.debug("You have hit 'Greetings' page");
 		return "Greetings from " + appName + " Spring Boot!";
@@ -38,23 +42,28 @@ public class HelloController {
 
 	// GET
 	@RequestMapping(value = "/products")
+	@CrossOrigin(origins = "http://localhost:9090")
 	public ResponseEntity<Object> getProduct() {
 		logger.info("GET: getting products");
-		return new ResponseEntity<>(productService.getProducts(), HttpStatus.OK);
+		return new ResponseEntity<>(productService.getProducts(),
+				HttpStatus.OK);
 	}
 
 	// POST
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public ResponseEntity<Object> createProduct(@RequestBody Product product) {
 		logger.info("POST: creating product");
-		return new ResponseEntity<>(productService.createProduct(product), HttpStatus.CREATED);
+		return new ResponseEntity<>(productService.createProduct(product),
+				HttpStatus.CREATED);
 	}
 
 	// PUT
 	@RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
+	public ResponseEntity<Object> updateProduct(@PathVariable("id") String id,
+			@RequestBody Product product) {
 		logger.info("PUT: updating product");
-		return new ResponseEntity<>(productService.updateProduct(id, product), HttpStatus.OK);
+		return new ResponseEntity<>(productService.updateProduct(id, product),
+				HttpStatus.OK);
 	}
 
 	// DELETE

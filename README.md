@@ -29,6 +29,9 @@ Actuators: out of the box management services: actuator/health, actuator/shutdow
 Command line runner and Application runner
 
 Application properties
+java -jar "jarfile".jar --server.port=23456
+java -jar "jarfile".jar -Dspring.config.location=C:\path_to_external.properties
+java -jar "jarfile".jar --spring.profiles.active="active profile"
 
 Logging
 
@@ -47,6 +50,8 @@ Services components
 Thymeleaf - Java-based library used to create a web application.
 
 Consuming RESTFull service by using jQuery AJAX
+
+Cross-Origin Resource Sharing (CORS) Support
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

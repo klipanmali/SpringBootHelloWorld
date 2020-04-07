@@ -314,6 +314,42 @@ zuul.routes.products.url = http://localhost:8080/
   - calls to /api/demo/ get forwarded to the products service. For example, /api/demo/products is forwarded to /products.
 <<<<<
 
+>>>>>
+Spring config server
+
+Add the @EnableConfigServer annotation in your main Spring Boot application class file that will act as Config server.
+
+extra properties to set on the server:
+
+If you want to load the configurations from a file system or your project's classpath you need to
+run your application with 'native' spring profile
+  spring.profiles.active=native
+or via VM arguments
+  -Dspring.profiles.active=native
+
+If you want to put your configuration files in your file system backend
+  spring.cloud.config.server.native.search-locations=file:///C:/Local_Data/projects/configprop
+If you want to put your configuration files in your classpath
+  spring.cloud.config.server.native.search-locations=classpath:/config
+
+You can access server:
+  localhost:8888/"application name"/default/master 
+  
+Add the @RefreshScope annotation to your main Spring Boot application class file that will act as Config client
+
+extra properties to set on client
+add the config server URL in your application.properties
+  spring.cloud.config.uri = http://localhost:8888
+
+change application properties on Configuration server,
+and hit the actuator endpoint POST localhost:8080/actuator/refresh on client side, to refresh the bean 
+without stopping JVM
+  curl localhost:8080/actuator/refresh -d {} -H "Content-Type: application/json
+refresh the client app
+
+<<<<<
+
+
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

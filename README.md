@@ -86,6 +86,7 @@ Spring annotations:
   - @EnableEurekaServer - make your Spring Boot application acts as a Eureka Server
   - @EnableEurekaClient - makes your Spring Boot application act as a Eureka client.
   - @EnableZuulProxy - makes your Spring Boot application act as a Zuul Proxy server.
+  - @EnableConfigServer - makes your Spring Boot application act as a Configuration Server.
   - @ExceptionHandler - handle the specific exception and sending the custom responses to the client
   - @Inject - for injecting, but @Autowired is little bit more powerful
   - @LocalServerPort - add local server port discovered at runtime
@@ -93,6 +94,8 @@ Spring annotations:
   - @Primary - in case of multiple beans, bean annotated with @Primary is injected
   - @Profile("profileName") - for which profile to start this bean
   - @Qualifier(qualifierName) - qualifies what bean to inject
+  - @RefreshScope - load the configuration properties value from the Config Server,
+    force a bean to refresh its configuration (that is, to pull updated values from the Config Server)
   - @RequestBody - define the request body content type.
   - @RequestMapping - request url mapping handled by controller. Used to define the Request URI to access the REST Endpoints.
   - @RequestParam - read the request parameters from the Request URL. By default, it is a required parameter. We can also set default value

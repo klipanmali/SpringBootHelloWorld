@@ -41,6 +41,8 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
 	compile("org.springframework.boot:spring-boot-starter-actuator")
 	compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+	// config client
+	compile("org.springframework.cloud:spring-cloud-starter-config")
     //testCompile("junit:junit")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 	//file client

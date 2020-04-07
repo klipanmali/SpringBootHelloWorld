@@ -5,9 +5,13 @@ eureka:
       defaultZone: http://localhost:8761/eureka
     instance:
       preferedIpAdress: true
-      
+
+
 spring:
-   application:
+  cloud:
+    config:
+      uri: http://localhost:8888
+  application:
       name: spring_boot_demoservice
 server:
    port: 8080
@@ -31,9 +35,9 @@ server:
    
 ---
 spring:
-   profiles: htps
+   profiles: https
    application:
-    name: demo_https_service
+    name: https_spring_boot_demoservice
 server:
   port: 443
   ssl:

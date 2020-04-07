@@ -28,6 +28,9 @@ public class HelloControlerIT {
 	@Value("${spring.application.name:demoservice}")
 	private String appName;
 
+	@Value("${welcome.message:default welcome message}")
+	private String welcomeMessage;
+
 	@Autowired
 	private TestRestTemplate template;
 
@@ -38,9 +41,11 @@ public class HelloControlerIT {
 
 	@Test
 	public void getHello() throws Exception {
-		String greeting = "Greetings from " + appName + " Spring Boot!";
+		String greeting = welcomeMessage + "<br>" + "Greetings from " + appName
+				+ " Spring Boot!";
 
-		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
+		ResponseEntity<String> response = template.getForEntity(base.toString(),
+				String.class);
 		assertThat(response.getBody(), equalTo(greeting));
 	}
 }

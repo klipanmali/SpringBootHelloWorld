@@ -26,10 +26,15 @@ public class HelloControllerTest {
 	@Value("${spring.application.name:demoservice}")
 	private String appName;
 
+	@Value("${welcome.message:default welcome message}")
+	private String welcomeMessage;
+
 	@Test
 	public void getHello() throws Exception {
-		String greeting = "Greetings from " + appName + " Spring Boot!";
-		mvc.perform(MockMvcRequestBuilders.get("/hello/").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
+		String greeting = welcomeMessage + "<br>" + "Greetings from " + appName
+				+ " Spring Boot!";
+		mvc.perform(MockMvcRequestBuilders.get("/hello/")
+				.accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
 				.andExpect(content().string(equalTo(greeting)));
 
 	}

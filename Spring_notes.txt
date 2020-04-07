@@ -392,6 +392,21 @@ access documentaion:
 	http://localhost:8080/"your_app"/swagger-ui.html
 <<<<<
 
+>>>>>
+Requires extra file name Dockerfile containg instructions how to build image
+
+Note − Enable the Expose daemon on tcp://localhost:2375 without TLS ---??????? doesn't work
+
+This doesn't work for mee.
+
+Maven build with Eclipse Docker plugin:
+	mvn package docker:build
+Gradle build with gradle-docker dependency and new created task buildDocker
+	gradle build vuildDocker
+	
+	
+<<<<<
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

@@ -76,6 +76,7 @@ Spring Admin Server/Client
 
 Swagger2 - REST API documentation
 
+Create Docker file - doesn't work
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

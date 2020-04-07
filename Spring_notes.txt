@@ -263,6 +263,33 @@ Fixed Delay scheduler is used to execute the tasks at a specific time. It should
 @Scheduled(fixedDelay = 1000, initialDelay = 1000)
 <<<<<
 
+>>>>>
+Enabling HTTPS
+
+Obtain the SSL certificate – Create a self-signed certificate or get one from a Certificate Authority
+
+Create a self-signed certificate with Java tool "keytool"
+	keytool -genkey -alias tomcat -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+
+Enable HTTPS and 443 port
+with application.properties
+	server.port: 443
+	server.ssl.key-store: keystore.p12
+	server.ssl.key-store-password: springboot
+	server.ssl.keyStoreType: PKCS12
+	server.ssl.keyAlias: tomcat
+
+with application.yml
+	server:
+	   port: 443
+	   ssl:
+	      key-store: keystore.p12
+	      key-store-password: springboot
+	      keyStoreType: PKCS12
+	      keyAlias: tomcat
+<<<<<
+
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

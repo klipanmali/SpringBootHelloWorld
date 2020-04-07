@@ -58,6 +58,8 @@ Internalization
  
 Scheduling
 
+Enabling HTTPS
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

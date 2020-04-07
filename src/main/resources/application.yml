@@ -5,7 +5,6 @@ server:
    port: 8080
 #    port: 0 server uses random port number
 
-
 ---
 spring:
    profiles: dev
@@ -21,3 +20,16 @@ spring:
       name: demoservice
 server: 
    port: 4431
+   
+---
+spring:
+   profiles: htps
+   application:
+    name: demo_https_service
+server:
+  port: 443
+  ssl:
+     key-store: keystore.p12
+     key-store-password: springboot
+     keyStoreType: PKCS12
+     keyAlias: tomcat

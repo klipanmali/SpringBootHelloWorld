@@ -53,6 +53,8 @@ Consuming RESTFull service by using jQuery AJAX
 
 Cross-Origin Resource Sharing (CORS) Support
 
+Internalization
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

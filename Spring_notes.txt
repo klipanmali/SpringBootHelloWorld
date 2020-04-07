@@ -233,6 +233,18 @@ For example, your web application is running on 8080 port and by using JavaScrip
 port. Under such situations, you will face the Cross-Origin Resource Sharing security issue on your web browsers.
 <<<<<
 
+>>>>>
+Internalization
+
+We need to determine default Locale of your application. We need to add the LocaleResolver bean in our Spring Boot application.
+LocaleChangeInterceptor is a used to change the new Locale based on the value of the language parameter added to a request.
+To take this effect, we need to add the LocaleChangeInterceptor into the application’s registry interceptor.
+The configuration class should extend the WebMvcConfigurerAdapter class and override the addInterceptors() method.
+Spring Boot application by default takes the message sources from src/main/resources folder under the classpath.
+The default locale message file name should be message.properties and files for each locale should name as messages_XX.properties.
+The “XX” represents the locale code.
+<<<<<
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

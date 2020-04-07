@@ -421,6 +421,14 @@ Access zipkin server
 	http://localhost:8123/zipkin/
 <<<<<
 
+>>>>>
+Flyway database upgrade
+
+You need to set bunch of properties for JDBC and Flyway
+You need to defined upgrade files like V1_inital.sql in src/main/resources/db/migration
+and that is it
+
+<<<<<
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

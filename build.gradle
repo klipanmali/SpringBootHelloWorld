@@ -75,6 +75,10 @@ dependencies {
 	compile ("org.apache.httpcomponents:httpcore")
 	//version included
     //compile ("org.apache.httpcomponents:httpcore:4.4.12")
+	// Flyway database upgrade
+	compile('org.flywaydb:flyway-core')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('mysql:mysql-connector-java')
 }
 
 dependencyManagement {

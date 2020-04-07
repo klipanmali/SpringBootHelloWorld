@@ -7,11 +7,23 @@ For further reference, please consider the following sections:
 * [Official Gradle documentation](https://docs.gradle.org)
 * [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/maven-plugin/)
 * [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/gradle-plugin/reference/html/)
+* [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+* [Flyway Migration](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup)
+* [Spring Data JDBC](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/)
 
 ### Additional Links
 These additional references should also help you:
 
 * [Gradle Build Scans â€“ insights for your project's build](https://scans.gradle.com#gradle)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+* [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
+* [Using Spring Data JDBC](https://github.com/spring-projects/spring-data-examples/tree/master/jdbc/basics)
 
 # SpringBootHelloWorld
 
@@ -94,6 +106,8 @@ Swagger2 - REST API documentation
 Create Docker file - doesn't work
 
 Cloud logging with Zipkin
+
+Flyway database upgrade
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

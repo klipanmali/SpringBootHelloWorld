@@ -32,13 +32,18 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+ext {
+	springCloudVersion = 'Greenwich.RELEASE'
+ }
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
 	compile("org.springframework.boot:spring-boot-starter-actuator")
+	compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     //testCompile("junit:junit")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
-	//java client
+	//file client
 	// version includded
 	compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.10'
 	//version excluded
@@ -47,5 +52,10 @@ dependencies {
 	compile ("org.apache.httpcomponents:httpcore")
 	//version included
     //compile ("org.apache.httpcomponents:httpcore:4.4.12")
-	
 }
+
+dependencyManagement {
+	imports {
+	   mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+ }

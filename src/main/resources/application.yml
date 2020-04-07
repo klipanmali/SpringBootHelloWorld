@@ -1,15 +1,23 @@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      preferedIpAdress: true
+      
 spring:
    application:
-      name: demoservice
+      name: spring_boot_demoservice
 server:
    port: 8080
 #    port: 0 server uses random port number
-
+      
 ---
 spring:
    profiles: dev
    application:
-      name: demoservice
+      name: dev_spring_boot_demoservice
 server:
    port: 9090
 
@@ -17,7 +25,7 @@ server:
 spring: 
    profiles: prod
    application:
-      name: demoservice
+      name: prof_spring_boot_demoservice
 server: 
    port: 4431
    

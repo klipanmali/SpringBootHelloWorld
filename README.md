@@ -60,6 +60,13 @@ Scheduling
 
 Enabling HTTPS
 
+Eureka server/client
+
+Zuul server
+
+Spring config server
+
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result
@@ -76,6 +83,9 @@ Spring annotations:
   - @ControlerAdvice - handles exceptions globally, annotated class is central place to implement exception handling for 
     every single exception(@ExceptionHandler)
   - @EnableAutoConfiguration - Spring Boot automatically configures your application based on the dependences you have added
+  - @EnableEurekaServer - make your Spring Boot application acts as a Eureka Server
+  - @EnableEurekaClient - makes your Spring Boot application act as a Eureka client.
+  - @EnableZuulProxy - makes your Spring Boot application act as a Zuul Proxy server.
   - @ExceptionHandler - handle the specific exception and sending the custom responses to the client
   - @Inject - for injecting, but @Autowired is little bit more powerful
   - @LocalServerPort - add local server port discovered at runtime

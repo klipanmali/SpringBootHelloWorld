@@ -289,6 +289,31 @@ with application.yml
 	      keyAlias: tomcat
 <<<<<
 
+>>>>>
+Eureka server/client
+
+Add @EnableEurekaServer annotation to your main Spring Boot application class
+Add @EnableEurekaClient annotation in the main Spring Boot application class, Eureka client will register application to the
+    Eureka server
+
+extra properties to set:
+eureka.client.serviceUrl.defaultZone  = http://localhost:8761/eureka
+eureka.client.instance.preferIpAddress = true
+<<<<<
+
+>>>>>
+Zuul server
+
+Zuul Server is a gateway application that handles all the requests and does the dynamic routing of microservice applications.
+The Zuul Server is also known as Edge Server.
+
+Add the @EnableZuulProxy annotation on your main Spring Boot application.
+extra properties to set:
+zuul.routes.products.path = /api/demo/**
+zuul.routes.products.url = http://localhost:8080/
+  - calls to /api/demo/ get forwarded to the products service. For example, /api/demo/products is forwarded to /products.
+<<<<<
+
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

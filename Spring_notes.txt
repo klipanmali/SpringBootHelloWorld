@@ -303,7 +303,7 @@ with application.yml
 <<<<<
 
 >>>>>
-Eureka server/client
+Eureka Server/Client
 
 Add @EnableEurekaServer annotation to your main Spring Boot application class
 Add @EnableEurekaClient annotation in the main Spring Boot application class, Eureka client will register application to the
@@ -315,7 +315,7 @@ eureka.client.instance.preferIpAddress = true
 <<<<<
 
 >>>>>
-Zuul server
+Zuul Server
 
 Zuul Server is a gateway application that handles all the requests and does the dynamic routing of microservice applications.
 The Zuul Server is also known as Edge Server.
@@ -328,7 +328,7 @@ zuul.routes.products.url = http://localhost:8080/
 <<<<<
 
 >>>>>
-Spring config server
+Spring Config Server
 
 Add the @EnableConfigServer annotation in your main Spring Boot application class file that will act as Config server.
 
@@ -362,6 +362,18 @@ refresh the client app
 
 <<<<<
 
+>>>>>
+Spring Admin Server/client
+
+Server
+Add the @EnableAdminServer annotation in your main Spring Boot application class file.
+
+CLient
+Enable the SBA Client by configuring the URL of the Spring Boot Admin Server:
+    spring.boot.admin.client.url=http://localhost:8080  
+    management.endpoints.web.exposure.include=*
+
+>>>>>
 
 
 Spring annotations:

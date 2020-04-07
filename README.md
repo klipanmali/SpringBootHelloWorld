@@ -66,11 +66,13 @@ Scheduling
 
 Enabling HTTPS
 
-Eureka server/client
+Eureka Server/Client
 
-Zuul server
+Zuul Server
 
-Spring config server
+Spring Config Server/Client
+
+Spring Admin Server/Client
 
 
 Spring annotations:
@@ -88,6 +90,7 @@ Spring annotations:
   - @Configuration - class annotated with this annotation is used to create beans from some third party classes
   - @ControlerAdvice - handles exceptions globally, annotated class is central place to implement exception handling for 
     every single exception(@ExceptionHandler)
+  - @EnableAdminServer - is used to make your as Admin Server to monitor all other microservices.
   - @EnableAutoConfiguration - Spring Boot automatically configures your application based on the dependences you have added
   - @EnableEurekaServer - make your Spring Boot application acts as a Eureka Server
   - @EnableEurekaClient - makes your Spring Boot application act as a Eureka client.

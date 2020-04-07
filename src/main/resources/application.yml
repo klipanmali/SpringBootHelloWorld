@@ -2,7 +2,7 @@
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8101/eureka
     instance:
       preferedIpAdress: true
 
@@ -24,7 +24,7 @@ spring:
     #If Discovery server was used by admin server you dont need this
 #    admin:
 #      client:
-#        url: http://localhost:9090
+#        url: http://localhost:8104
   cloud:
     #Config server
     config:
@@ -32,7 +32,7 @@ spring:
   application:
     name: spring_boot_demoservice
   zipkin:
-    base-url: http://localhost:8123/
+    base-url: http://localhost:8105/
       
 server:
    port: 8080

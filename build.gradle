@@ -57,6 +57,13 @@ dependencies {
 	// Swagger UI
 	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+	// Spring Cloud logging - Slueth
+	// This amy work with Spring Cloud Edgware.RELEASE
+	//compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-sleuth'
+	//compile group: 'org.springframework.cloud', name: 'spring-cloud-sleuth-zipkin'
+	// Spring Cloud logging - Zipkin
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-zipkin'	
+	//compile ('org.springframework.cloud:spring-cloud-starter-sleuth')
     //testCompile("junit:junit")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 	//file client
@@ -77,6 +84,7 @@ dependencyManagement {
 	}
  }
  
+
  task buildDocker(type: Docker, dependsOn: build) {
 	 applicationName = jar.baseName
 	 dockerfile = file('src/main/docker/Dockerfile')

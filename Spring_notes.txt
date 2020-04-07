@@ -393,6 +393,7 @@ access documentaion:
 <<<<<
 
 >>>>>
+Docker build
 Requires extra file name Dockerfile containg instructions how to build image
 
 Note − Enable the Expose daemon on tcp://localhost:2375 without TLS ---??????? doesn't work
@@ -403,9 +404,23 @@ Maven build with Eclipse Docker plugin:
 	mvn package docker:build
 Gradle build with gradle-docker dependency and new created task buildDocker
 	gradle build vuildDocker
-	
-	
 <<<<<
+
+>>>>>
+Cloud logging with Zipkin
+
+Add @EnableZipkinServer to your Spring Boot application to make it Zipkin server
+
+On the client side adding zipkin dependency should be enough
+Configure zipkin 
+spring-cloud-zipkin-base-url =  http://localhost:8123/
+log format should be [application-name,traceid,spanid,zipkin-export]
+	zipkin-export - By default it is false. If it is true, logs will be exported to the Zipkin server
+
+Access zipkin server 
+	http://localhost:8123/zipkin/
+<<<<<
+
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

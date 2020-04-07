@@ -1,5 +1,7 @@
 package my.springboot.hello.controller;
 
+import java.util.logging.Level;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,8 @@ public class HelloController {
 
 	private static final Logger logger = LoggerFactory
 			.getLogger(HelloController.class);
+	private static final java.util.logging.Logger sLogger = java.util.logging.Logger
+			.getLogger(HelloController.class.getName());
 
 	@Autowired
 	ProductService productService;
@@ -41,7 +45,9 @@ public class HelloController {
 	@RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
 	// valid requests are :8080/hello :8080/hello/
 	public String index() {
-		logger.debug("You have hit 'Greetings' page");
+		// logger.debug("You have hit 'Greetings' page");
+		// do I really need this to have zipkin logging, it doesn't work anyhow
+		sLogger.log(Level.INFO, "You have hit 'Greetings' page");
 		return welcomeMessage + "<br>" + "Greetings from " + appName
 				+ " Spring Boot!";
 	}

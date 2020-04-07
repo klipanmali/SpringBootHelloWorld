@@ -1,3 +1,18 @@
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Official Gradle documentation](https://docs.gradle.org)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/maven-plugin/)
+* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.1.12.RELEASE/gradle-plugin/reference/html/)
+
+### Additional Links
+These additional references should also help you:
+
+* [Gradle Build Scans â€“ insights for your project's build](https://scans.gradle.com#gradle)
+
 # SpringBootHelloWorld
 
 Spring Boot gradle version project
@@ -78,6 +93,8 @@ Swagger2 - REST API documentation
 
 Create Docker file - doesn't work
 
+Cloud logging with Zipkin
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result
@@ -101,6 +118,7 @@ Spring annotations:
   - @EnableZuulProxy - makes your Spring Boot application act as a Zuul Proxy server.
   - @EnableConfigServer - makes your Spring Boot application act as a Configuration Server.
   - @EnableSwagger2 - enable the Swagger2 Documentation API for your Spring Boot application.
+  - @EnableZipkinServer -  enable your application act as a Zipkin server.
   - @ExceptionHandler - handle the specific exception and sending the custom responses to the client
   - @Inject - for injecting, but @Autowired is little bit more powerful
   - @LocalServerPort - add local server port discovered at runtime

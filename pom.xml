@@ -82,6 +82,21 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
 		</dependency>
+		<!-- Spring Cloud logging - Sleuth-->
+		<!--  This maybe works for Spring Cloud Edgware.RELEASE -->
+<!-- 		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
+		</dependency> -->
+		<!-- Spring Cloud logging - Zipkin-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-zipkin</artifactId>
+		</dependency>
         <!-- File upload client dependencies -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>

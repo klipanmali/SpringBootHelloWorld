@@ -19,9 +19,9 @@ management:
         include: "*"
         
 spring:
-# if Discovery server was used by admin server
 #  boot:
     #Admin server
+    #If Discovery server was used by admin server you dont need this
 #    admin:
 #      client:
 #        url: http://localhost:9090
@@ -31,6 +31,7 @@ spring:
       uri: http://localhost:8888
   application:
       name: spring_boot_demoservice
+      
 server:
    port: 8080
 #    port: 0 server uses random port number

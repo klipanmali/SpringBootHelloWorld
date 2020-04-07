@@ -38,8 +38,8 @@ public class HelloController {
 	@Value("${welcome.message:default welcome message}")
 	private String welcomeMessage;
 
-	@RequestMapping(value = {"", "/"}) // valid requests are :8080/hello
-										// :8080/hello/
+	@RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
+	// valid requests are :8080/hello :8080/hello/
 	public String index() {
 		logger.debug("You have hit 'Greetings' page");
 		return welcomeMessage + "<br>" + "Greetings from " + appName
@@ -47,7 +47,7 @@ public class HelloController {
 	}
 
 	// GET
-	@RequestMapping(value = "/products")
+	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	@CrossOrigin(origins = "http://localhost:9090")
 	public ResponseEntity<Object> getProduct() {
 		logger.info("GET: getting products");

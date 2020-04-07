@@ -47,6 +47,12 @@ dependencies {
 	compile("org.springframework.cloud:spring-cloud-starter-config")
 	// Admin client
 	compile('de.codecentric:spring-boot-admin-starter-client')
+	// Swagger2 - REST API Design/Development/Documentation
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+	// Swagger UI
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
     //testCompile("junit:junit")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 	//file client

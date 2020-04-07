@@ -370,11 +370,27 @@ Add the @EnableAdminServer annotation in your main Spring Boot application class
 
 CLient
 Enable the SBA Client by configuring the URL of the Spring Boot Admin Server:
-    spring.boot.admin.client.url=http://localhost:8080  
+    spring.boot.admin.client.url=http://localhost:8080 (this is
+       needed only in case Eureka discovery is not active)
     management.endpoints.web.exposure.include=*
 
 >>>>>
 
+>>>>>
+Swagger2 - REST API Design/Development/Documentation
+
+Add the @EnableSwagger2 annotation in your main Spring Boot application, or Configuration class
+
+Configure the Swagger through Docket bean
+  - select which APIs with help of ApiSelectorBuilder.apis()
+  - select which paths with help of  ApiSelectorBuilder.paths()
+
+Swagger UI is a built-in solution which makes user interaction with the Swagger-generated API documentation
+much easier.
+
+access documentaion:
+	http://localhost:8080/"your_app"/swagger-ui.html
+<<<<<
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

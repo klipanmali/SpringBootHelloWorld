@@ -74,6 +74,8 @@ Spring Config Server/Client
 
 Spring Admin Server/Client
 
+Swagger2 - REST API documentation
+
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
@@ -97,6 +99,7 @@ Spring annotations:
   - @EnableEurekaClient - makes your Spring Boot application act as a Eureka client.
   - @EnableZuulProxy - makes your Spring Boot application act as a Zuul Proxy server.
   - @EnableConfigServer - makes your Spring Boot application act as a Configuration Server.
+  - @EnableSwagger2 - enable the Swagger2 Documentation API for your Spring Boot application.
   - @ExceptionHandler - handle the specific exception and sending the custom responses to the client
   - @Inject - for injecting, but @Autowired is little bit more powerful
   - @LocalServerPort - add local server port discovered at runtime

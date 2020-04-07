@@ -24,7 +24,13 @@ The Spring Boot Maven plugin provides many convenient features:
   - It provides a built-in dependency resolver that sets the version number to match Spring Boot dependencies. You can override 
     any version you wish, but it will default to Boot’s chosen set of versions.
 
-Actuators: out of the box management services: actuator/health, actuator/shutdown
+Actuators: out of the box management services: 
+    actuator/health - application health
+    actuator/shutdown
+    actuator/metrics - application metrics such as memory used, memory free, threads, classes, system uptime etc
+    actuator/env -  list of Environment variables used in the application
+    actuator/beans - Spring beans and its types, scopes and dependency
+    actuator/info - information about the Spring Boot application
 
 Command line runner and Application runner
 

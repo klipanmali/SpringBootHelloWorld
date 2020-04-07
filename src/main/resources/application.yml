@@ -6,7 +6,18 @@ eureka:
     instance:
       preferedIpAdress: true
 
-
+# separate port number for accessing the Spring boot actutator endpoints
+# management:
+#  server:
+#    port: 9000
+    
+# enable all of the actuator endpoints 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
 spring:
   cloud:
     config:

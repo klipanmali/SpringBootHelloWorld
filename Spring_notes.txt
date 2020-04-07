@@ -45,16 +45,29 @@ another Spring Data release train, you would add the following to your pom.xml:
 <<<<<
 
 >>>>>
-actuators
+Spring Boot 2.x Actuators
 
 Spring Boot provides several out of the box management services with its actuator module, such as health, audits, beans, and more.
-
+Spring Boot Actuator provides secured endpoints for monitoring and managing your Spring Boot application.
+Actuator comes with most endpoints disabled.  To enable all of them, we could set:
+    management.endpoints.web.exposure.include=*
+Alternatively, we could list endpoints which should be enabled.
+To expose all enabled endpoints except one :
+    management.endpoints.web.exposure.include=*
+    management.endpoints.web.exposure.exclude=loggers
+    
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         
         curl localhost:8080/actuator/health
+        
+
+If you want to use the separate port number for accessing the Spring boot actutator endpoints add the management port number
+in application.properties file. Note that if you specified the management port number, then same application is running on
+two different port numbers.
+    management.server.port = 9000
 
 <<<<<
 

@@ -245,6 +245,24 @@ The default locale message file name should be message.properties and files for 
 The “XX” represents the locale code.
 <<<<<
 
+>>>>>
+Scheduling
+
+Scheduling is a process of executing the tasks for the specific time period. Spring Boot provides a good support to write a scheduler
+on the Spring applications.
+Java Cron expressions are used to configure the instances of CronTrigger.
+
+The @EnableScheduling annotation is used to enable the scheduler for your application. This annotation should be added into
+the main Spring Boot application class file.
+The @Scheduled annotation is used to trigger the scheduler for a specific time period.
+	@Scheduled(cron = "0 * 9 * * ?")
+	
+Fixed Rate scheduler is used to execute the tasks at the specific time. It does not wait for the completion of previous task.
+	@Scheduled(fixedRate = 1000)
+Fixed Delay scheduler is used to execute the tasks at a specific time. It should wait for the previous task completion.
+@Scheduled(fixedDelay = 1000, initialDelay = 1000)
+<<<<<
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

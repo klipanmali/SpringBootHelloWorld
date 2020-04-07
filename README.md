@@ -92,6 +92,7 @@ Spring annotations:
     every single exception(@ExceptionHandler)
   - @EnableAdminServer - is used to make your as Admin Server to monitor all other microservices.
   - @EnableAutoConfiguration - Spring Boot automatically configures your application based on the dependences you have added
+  - @EnableDiscoveryClient - Enable Discovery client for the discovery service(Eureka exm.)
   - @EnableEurekaServer - make your Spring Boot application acts as a Eureka Server
   - @EnableEurekaClient - makes your Spring Boot application act as a Eureka client.
   - @EnableZuulProxy - makes your Spring Boot application act as a Zuul Proxy server.

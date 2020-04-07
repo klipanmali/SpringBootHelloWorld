@@ -19,11 +19,12 @@ management:
         include: "*"
         
 spring:
-  boot:
+# if Discovery server was used by admin server
+#  boot:
     #Admin server
-    admin:
-      client:
-        url: http://localhost:9090
+#    admin:
+#      client:
+#        url: http://localhost:9090
   cloud:
     #Config server
     config:

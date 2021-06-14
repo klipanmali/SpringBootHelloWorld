@@ -79,6 +79,8 @@ dependencies {
 	compile('org.flywaydb:flyway-core')
 	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	compile('mysql:mysql-connector-java')
+	// email
+	compile('org.springframework.boot:spring-boot-starter-mail')
 }
 
 dependencyManagement {

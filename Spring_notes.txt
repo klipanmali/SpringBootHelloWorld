@@ -430,6 +430,23 @@ and that is it
 
 <<<<<
 
+>>>>>
+Email, with attachemnt
+
+"mail.smtp.auth", "true"
+"mail.smtp.starttls.enable", "true"
+"mail.smtp.host", "smtp.gmail.com" if sent via gmail
+"mail.smtp.port", "587"
+"mail.smtp.host", "localhost" is local email server
+ 
+If it is required to provide user ID and Password to the e-mail server
+"mail.user", "myuser"
+"mail.password", "mypwd"
+
+Note − Please switch ON allow less secure apps in your Gmail account settings before sending an email.
+<<<<<
+
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

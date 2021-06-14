@@ -10,6 +10,7 @@ For further reference, please consider the following sections:
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
 * [Flyway Migration](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/#howto-execute-flyway-database-migrations-on-startup)
 * [Spring Data JDBC](https://docs.spring.io/spring-data/jdbc/docs/current/reference/html/)
+* [Java Mail Sender](https://docs.spring.io/spring-boot/docs/2.2.6.RELEASE/reference/htmlsingle/#boot-features-email)
 
 ### Additional Links
 These additional references should also help you:
@@ -108,6 +109,8 @@ Create Docker file - doesn't work
 Cloud logging with Zipkin
 
 Flyway database upgrade
+
+Sending Email
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

@@ -115,6 +115,8 @@ Sending Email
 
 Hystrix, isolates the points of access between the services, stops cascading failures, fallback options
 
+WebSocket and STOPMP messaging (this doesn't work)
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result
@@ -140,6 +142,7 @@ Spring annotations:
   - @EnableSwagger2 - enable the Swagger2 Documentation API for your Spring Boot application.
   - @EnableZipkinServer -  enable your application act as a Zipkin server.
   - @ExceptionHandler - handle the specific exception and sending the custom responses to the client
+  - @EnableWebSocketMessageBroker - used to configure the Web socket message broker to create STOMP endpoints.
   - @EnableHystrix - enable Hystrix functionalities, circuit breaker
   - @HystrixCommand - 
   - @HystrixProperty - 

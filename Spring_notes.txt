@@ -456,6 +456,12 @@ monitored method and fallback method must have the same signature
 
 <<<<<
 
+>>>>>
+WebSocket and STOMP
+
+this example doesn't work
+<<<<<
+
  
 
 Spring annotations:

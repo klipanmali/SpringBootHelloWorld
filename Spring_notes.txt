@@ -446,6 +446,17 @@ If it is required to provide user ID and Password to the e-mail server
 Note − Please switch ON allow less secure apps in your Gmail account settings before sending an email.
 <<<<<
 
+>>>>>
+Hystrix - circuit breaker
+
+@EnableHystrix to enable functionality
+@HystrixCommand and @HystrixProperty annotations, annotate monitored method
+HystricCommand will block any exception from monitored method so be careful
+monitored method and fallback method must have the same signature
+
+<<<<<
+
+ 
 
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests

@@ -25,6 +25,7 @@ The following guides illustrate how to use some features concretely:
 * [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
 * [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
 * [Using Spring Data JDBC](https://github.com/spring-projects/spring-data-examples/tree/master/jdbc/basics)
+* [Circuit Breaker](https://spring.io/guides/gs/circuit-breaker/)
 
 # SpringBootHelloWorld
 
@@ -112,6 +113,8 @@ Flyway database upgrade
 
 Sending Email
 
+Hystrix, isolates the points of access between the services, stops cascading failures, fallback options
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result
@@ -137,6 +140,9 @@ Spring annotations:
   - @EnableSwagger2 - enable the Swagger2 Documentation API for your Spring Boot application.
   - @EnableZipkinServer -  enable your application act as a Zipkin server.
   - @ExceptionHandler - handle the specific exception and sending the custom responses to the client
+  - @EnableHystrix - enable Hystrix functionalities, circuit breaker
+  - @HystrixCommand - 
+  - @HystrixProperty - 
   - @Inject - for injecting, but @Autowired is little bit more powerful
   - @LocalServerPort - add local server port discovered at runtime
   - @PathVariable - define the custom or dynamic request URI. The Path variable in request URI is defined as curly braces {}

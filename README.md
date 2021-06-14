@@ -117,6 +117,8 @@ Hystrix, isolates the points of access between the services, stops cascading fai
 
 WebSocket and STOPMP messaging (this doesn't work)
 
+Batch Service/Processing
+
 Spring annotations:
   - @AutoConfigureMockMvc - sets up MockMvc from Spring Test which  allows, via a set of convenient builder classes, to send HTTP requests
     into the DispatcherServlet and make assertions about the result

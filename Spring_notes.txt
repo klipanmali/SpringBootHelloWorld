@@ -462,6 +462,10 @@ WebSocket and STOMP
 this example doesn't work
 <<<<<
 
+>>>>>
+Batch service/processing
+
+<<<<<
  
 
 Spring annotations:
